@@ -16,34 +16,6 @@ db <- readRDS("../00_data/db.rds")
 # change a little detail on the data
 db$value[which(db$mov == 'Separations')] <- abs(db$value[which(db$mov == 'Separations')])
 
-# creates legend labels
-# niceprint <- function(x, decimal.mark=".", big.mark=",", digits = 2, ...) {
-#   formatC(unclass(x), decimal.mark=decimal.mark, big.mark=big.mark, digits = digits, format = "f")
-# }
-# brHires <- c(min(db$value[which(db$mov == 'Hires')]), 
-#              mean(db$value[which(db$mov == 'Hires')]),
-#              max(db$value[which(db$mov == 'Hires')]))
-# legHires <- c(
-#   niceprint(min(db$value[which(db$mov == 'Hires')])/1000),
-#   niceprint(mean(db$value[which(db$mov == 'Hires')])/1000),
-#   niceprint(max(db$value[which(db$mov == 'Hires')])/1000))
-# 
-# brSep <- c(min(db$value[which(db$mov == 'Separations')]), 
-#            mean(db$value[which(db$mov == 'Separations')]),
-#            max(db$value[which(db$mov == 'Separations')]))
-# legSep <- c(
-#   niceprint(min(db$value[which(db$mov == 'Separations')])/1000),
-#   niceprint(mean(db$value[which(db$mov == 'Separations')])/1000),
-#   niceprint(max(db$value[which(db$mov == 'Separations')])/1000))
-# 
-# brNet <- c(min(db$value[which(db$mov == 'Net Hires')]), 
-#            mean(db$value[which(db$mov == 'Net Hires')]),
-#            max(db$value[which(db$mov == 'Net Hires')]))
-# legNet <- c(
-#   niceprint(min(db$value[which(db$mov == 'Net Hires')])/1000),
-#   niceprint(mean(db$value[which(db$mov == 'Net Hires')])/1000),
-#   niceprint(max(db$value[which(db$mov == 'Net Hires')])/1000))
-
 # creates color palettes
 palHires <- colorRampPalette(rev(brewer.pal(11, "RdYlBu")))
 scHires <- scale_colour_gradientn(colours = palHires(100), 
@@ -120,8 +92,9 @@ server <- function(input, output) {
     t10 <- '<p></p>'
     t11 <- '<h4>Observations</h3>'
     t12 <- '<p>The scale changes with the year and the movement! (It is on my To Do to change this).</p><p>The code, as well as the RDS, are available on my <a href="https://github.com/joaoapb">GitHub</a>.</p>'  
+    t13 <- '<p>The only calculation done is regarding the scale of the data.</p>'
     
-    HTML(paste(t1, t2, t3, t4,t6, t7, t8, t9, t10, t11, t12, sep = '<br/>'))
+    HTML(paste(t1, t2, t3, t4,t6, t7, t8, t9, t10, t11, t12, t13, sep = '<br/>'))
     })
   
   # select the color scale
