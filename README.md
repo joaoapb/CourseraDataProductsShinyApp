@@ -3,7 +3,8 @@ Shiny App for the Data Products Course from Coursera
 
 # On the Web
 Application: https://joaoapb.shinyapps.io/brazilian_labor_stats/
-Presentation: 
+
+Presentation: https://joaoapb.github.io/AppPitch/index.html
 
 # Instructions from the Course Page
 This peer assessed assignment has two parts. First, you will create a Shiny application and deploy it on Rstudio's servers. Second, you will use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about your application.
